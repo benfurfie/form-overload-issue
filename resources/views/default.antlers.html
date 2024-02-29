@@ -1,0 +1,25 @@
+{{ form:set is="form" }}
+
+    {{ if {form:errors} }}
+        <ul>
+            {{ form:errors }}
+                <li>Error: {{ value }}</li>
+            {{ /form:errors }}
+        </ul>
+    {{ endif }}
+
+    {{ if {form:success} }}
+        <p>Success!</p>
+    {{ endif }}
+
+    {{ form:create }}
+        {{ fields }}
+            <label class="flex flex-col">
+                <span>{{ display }}</span>
+                {{ field }}
+            </label>
+        {{ /fields }}
+        <button>Submit</button>
+    {{ /form:create }}
+
+{{ /form:set }}
